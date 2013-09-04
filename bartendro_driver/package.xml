@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>bartendro_driver</name>
+  <version>0.1.0</version>
+  <description>The bartendro_driver package</description>
+
+  <maintainer email="namniart@gmail.com">Austin Hendrix</maintainer>
+  <license>BSD</license>
+  <url type="website">http://wiki.ros.org/bartendro_driver</url>
+  <author email="namniart@gmail.com">Austin Hendrix</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>bartendro_msgs</build_depend>
+
+  <run_depend>bartendro_msgs</run_depend>
+  <run_depend>rospy</run_depend>
+</package>
