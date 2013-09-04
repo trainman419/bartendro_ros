@@ -10,7 +10,9 @@ find_package(catkin REQUIRED message_generation std_msgs)
 add_message_files(
   FILES
   Drink.msg
+  Drinks.msg
   Ingredient.msg
+  Ingredients.msg
 )
 
 # TODO: generate messages
