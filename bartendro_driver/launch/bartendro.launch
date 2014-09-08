@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="bartendro_driver" type="Driver.py" name="bartendro"
+        output="screen">
+    <param name="uri" value="http://bartendro"/>
+  </node>
+</launch>

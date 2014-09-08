@@ -24,10 +24,12 @@ class DriverBackend:
 class Driver:
 
     def __init__(self, uri, backend=DriverBackend):
+        rospy.loginfo("Bartendro driver connecting to %s" % ( uri ) )
         self.backend = backend(uri)
         self.ingredient_pub = rospy.Publisher("~ingredients", Ingredients, 
-            latch=True)
-        self.drink_pub = rospy.Publisher("~drinks", Drinks, latch=True)
+            latch=True, queue_size=1)
+        self.drink_pub = rospy.Publisher("~drinks", Drinks, latch=True,
+            queue_size=1)
 
         # TODO: register actionlib server for dispense
         # TODO: start up a thread to do run()
@@ -40,5 +42,6 @@ class Driver:
 
 if __name__ == '__main__':
     rospy.init_node('bartendro')
-    driver = Driver("http://127.0.0.1")
+    uri = rospy.get_param('~uri', "http://127.0.0.1")
+    driver = Driver(uri)
     driver.run()
